@@ -15,13 +15,16 @@ class square(object):
 
     def draw(self):
         pyglet.graphics.draw(4, pyglet.gl.GL_POLYGON,
-                ('v2f',(self.pos[0]-self.size, self.pos[1]+self.size, self.pos[0]+self.size, self.pos[1]+self.size,
-                    self.pos[0]+self.size, self.pos[1]-self.size, self.pos[0]-self.size, self.pos[1]-self.size)))
+                ('v2f',(self.pos[0]-self.size, self.pos[1]+self.size, 
+                    self.pos[0]+self.size, self.pos[1]+self.size,
+                    self.pos[0]+self.size, self.pos[1]-self.size, 
+                    self.pos[0]-self.size, self.pos[1]-self.size)))
         self.update()
         
 shapes = []
 for _ in xrange(25):
-    shapes.append(square(25, (random()*500, random()*500), 0, random()*-10))
+    shapes.append(square(random()*50, (random()*500, random()*500), 0, 
+        random()*-10))
 window = pyglet.window.Window()
 
 @window.event
